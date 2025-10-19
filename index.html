@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm Nang Toàn Diện: Hội Chứng Thận Hư Tiên Phát ở Trẻ Em</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f0f4f8; /* A light, clean background */
+        }
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            background-size: 400% 400%;
+            animation: gradient-animation 20s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .content-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .content-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-item {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .table-cell-custom strong {
+            color: #1e3a8a;
+        }
+        .table-cell-custom ul, .table-cell-custom ol {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+         .table-cell-custom li {
+            margin-bottom: 0.5rem;
+        }
+        .watermark-container {
+            position: relative;
+            overflow: hidden;
+            padding: 1.5rem;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.04);
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .sub-table {
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        .sub-table th {
+            background-color: rgba(243, 244, 246, 0.7);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .sub-table td {
+             padding: 0.75rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div id="background-animation"></div>
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 glassmorphism shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center py-2 space-x-1 md:space-x-4 overflow-x-auto">
+                <a href="#section-1" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Đại cương</a>
+                <a href="#section-2" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Bệnh sinh</a>
+                <a href="#section-3" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Phân loại</a>
+                <a href="#section-4" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Chẩn đoán</a>
+                <a href="#section-5" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Biến chứng</a>
+                <a href="#section-6" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Điều trị</a>
+                <a href="#section-7" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Chăm sóc</a>
+                <a href="#section-8" class="nav-item p-2 rounded-lg text-xs md:text-sm font-semibold text-gray-700 whitespace-nowrap">Tiên lượng</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container chính -->
+    <div class="container mx-auto px-4 py-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-16 content-card">
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600">Cẩm Nang Toàn Diện</h1>
+            <p class="text-lg lg:text-xl text-gray-600 mt-2">Hội Chứng Thận Hư Tiên Phát ở Trẻ Em</p>
+            <p class="text-md font-bold text-gray-700 mt-4">Dữ liệu được biên soạn và tổng hợp bởi TEAMDRCAT dựa trên kiến thức chuẩn Y Hà Nội và các Hướng dẫn Y Khoa cập nhật</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="space-y-8">
+            
+            <!-- Section 1: Đại Cương -->
+            <section id="section-1" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <div class="p-6 bg-gradient-to-r from-blue-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900">1. Đại cương</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom w-1/3 p-4"><strong>Định nghĩa</strong></td><td class="table-cell-custom w-2/3 p-4">
+                                <ul>
+                                    <li>Là một rối loạn đặc trưng bởi sự <strong>tăng tính thấm của màng lọc cầu thận</strong>.</li>
+                                    <li><strong>Tiêu chuẩn chẩn đoán kinh điển (Bộ Tứ)</strong>:
+                                        <ol class="list-decimal list-inside ml-4 mt-2 space-y-1">
+                                            <li><strong>Protein niệu ngưỡng thận hư</strong>: > 50 mg/kg/ngày hoặc tỉ số Protein/Creatinin niệu (UPCR) ≥ 200 mg/mmol.</li>
+                                            <li><strong>Giảm Albumin máu</strong>: < 30 g/L.</li>
+                                            <li><strong>Phù toàn thân</strong>.</li>
+                                            <li><strong>Tăng lipid máu</strong>: Tăng Cholesterol (> 5,2 mmol/L) và Triglyceride.</li>
+                                        </ol>
+                                    </li>
+                                     <li>Theo <strong>KDIGO</strong>, HCTH được xác định khi có Protein niệu ngưỡng thận hư KÈM THEO Albumin máu < 30g/L hoặc có phù.</li>
+                                </ul>
+                            </td></tr>
+                            <tr><td class="table-cell-custom p-4"><strong>Dịch tễ học</strong></td><td class="table-cell-custom p-4">
+                                <ul>
+                                    <li>Là bệnh cầu thận thường gặp nhất ở trẻ em.</li>
+                                    <li>Tuổi đỉnh cao: 2-6 tuổi. | Tỷ lệ Nam:Nữ ≈ 2:1.</li>
+                                </ul>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Section 2: Cơ chế bệnh sinh -->
+            <section id="section-2" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <div class="p-6 bg-gradient-to-r from-green-100/50 to-transparent flex items-center">
+                     <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-green-900">2. Cơ chế Bệnh sinh</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                     <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800">Tổn thương Podocyte & Miễn dịch</h3>
+                            <ul class="mt-2 text-sm list-disc list-inside space-y-1">
+                                <li>Tổn thương <strong>tế bào có chân (Podocyte)</strong> là trung tâm, làm mất chân giả và thay đổi cấu trúc khe lọc (Nephrin, Podocin).</li>
+                                <li>Rối loạn chức năng <strong>tế bào T</strong>, sản xuất "yếu tố lưu hành" gây tăng tính thấm.</li>
+                                <li>Mất Globulin miễn dịch (IgG, IgA) và yếu tố bổ thể qua nước tiểu → Suy giảm miễn dịch.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800">Cơ chế Phù</h3>
+                            <ul class="mt-2 text-sm list-disc list-inside space-y-1">
+                                <li><strong>Underfill:</strong> Mất albumin → Giảm áp lực keo → Dịch thoát lòng mạch → Kích hoạt hệ RAAS & ADH giữ muối nước.</li>
+                                <li><strong>Overfill:</strong> Bất thường tiên phát tại thận gây tăng tái hấp thu Natri (tăng hoạt động kênh ENaC).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                             <h3 class="font-bold text-green-800">Tăng Lipid máu</h3>
+                            <ul class="mt-2 text-sm list-disc list-inside space-y-1">
+                                <li>Gan tăng tổng hợp bù trừ lipoprotein do giảm áp lực keo.</li>
+                                <li>Giảm dị hóa lipid do giảm hoạt động của enzyme lipoprotein lipase.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800">Tăng đông</h3>
+                            <ul class="mt-2 text-sm list-disc list-inside space-y-1">
+                                <li>Mất yếu tố chống đông (Antithrombin III, Protein C, S).</li>
+                                <li>Tăng yếu tố tiền đông (Fibrinogen, Yếu tố V, VIII).</li>
+                                <li>Cô đặc máu & Tăng kết tập tiểu cầu.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Section 3: Phân loại -->
+            <section id="section-3" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <div class="p-6 bg-gradient-to-r from-indigo-100/50 to-transparent flex items-center">
+                     <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-indigo-900">3. Phân loại</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom p-4 w-1/3"><strong>Theo Nguyên nhân</strong></td><td class="table-cell-custom p-4 w-2/3"><ul><li><strong>Tiên phát (vô căn)</strong>: > 90% các trường hợp.</li><li><strong>Thứ phát</strong>: Do Lupus, HSP, Viêm gan B/C, HIV, thuốc...</li><li><strong>Bẩm sinh/Trẻ nhỏ</strong>: Khởi phát < 1 tuổi, thường do đột biến gen.</li></ul></td></tr>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom p-4"><strong>Theo Mô bệnh học</strong></td><td class="table-cell-custom p-4"><ul><li><strong>Bệnh tổn thương tối thiểu (MCD)</strong>: 80-90%, nhạy cảm corticoid.</li><li><strong>Xơ hóa cầu thận ổ-đoạn (FSGS)</strong>: 10-20%, thường kháng corticoid.</li></ul></td></tr>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom p-4"><strong>Theo Lâm sàng</strong></td><td class="table-cell-custom p-4"><ul><li><strong>Đơn thuần</strong>: Không tăng HA, đái máu đại thể, suy thận.</li><li><strong>Không đơn thuần</strong>: Có ít nhất 1 trong 3 dấu hiệu trên.</li></ul></td></tr>
+                            <tr><td class="table-cell-custom p-4"><strong>Theo Đáp ứng điều trị</strong></td><td class="table-cell-custom p-4"><ul><li><strong>Nhạy cảm (SSNS)</strong> vs. <strong>Kháng (SRNS) Corticoid</strong>.</li><li><strong>Tái phát thường xuyên (FRNS)</strong>: ≥ 4 đợt/năm.</li><li><strong>Phụ thuộc (SDNS) Corticoid</strong>: Tái phát khi đang giảm liều/sau ngưng thuốc < 14 ngày.</li></ul></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4: Chẩn đoán -->
+            <section id="section-4" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                 <div class="p-6 bg-gradient-to-r from-purple-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-purple-900">4. Chẩn đoán</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom w-1/3 p-4"><strong>Lâm sàng & Cận lâm sàng</strong></td><td class="table-cell-custom w-2/3 p-4">
+                                <ul>
+                                    <li>Chẩn đoán dựa vào bộ tứ kinh điển: Phù + Protein niệu ngưỡng thận hư + Giảm Albumin máu + Tăng Lipid máu.</li>
+                                    <li>Các xét nghiệm ban đầu: Tổng phân tích nước tiểu, Protein/Creatinin niệu, Albumin máu, lipid máu, chức năng thận, bổ thể.</li>
+                                </ul>
+                            </td></tr>
+                            <tr><td class="table-cell-custom p-4"><strong>Chỉ định Sinh thiết thận</strong></td><td class="table-cell-custom p-4">
+                                <p>Khi có các đặc điểm <strong>không điển hình</strong>:</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>Tuổi < 1 tuổi hoặc > 12 tuổi.</li>
+                                    <li>HCTH không đơn thuần (tăng HA, đái máu, suy thận).</li>
+                                    <li>Giảm bổ thể máu.</li>
+                                    <li><strong>HCTH kháng corticoid (SRNS)</strong>.</li>
+                                </ul>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+             
+             <!-- Section 5: Biến chứng -->
+            <section id="section-5" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                 <div class="p-6 bg-gradient-to-r from-yellow-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-yellow-900">5. Biến chứng</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                     <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800">Sốc giảm thể tích</h3>
+                            <p class="mt-2 text-sm">Do albumin máu quá thấp, gây tụt huyết áp, đau bụng. Cần truyền Albumin cấp cứu.</p>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800">Huyết khối - Tắc mạch</h3>
+                            <p class="mt-2 text-sm">Do tình trạng tăng đông. Nguy cơ cao ở tĩnh mạch thận, phổi. Cần dùng thuốc chống đông.</p>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                             <h3 class="font-bold text-yellow-800">Nhiễm trùng</h3>
+                            <p class="mt-2 text-sm">Do suy giảm miễn dịch. Thường gặp: Viêm phúc mạc (do Phế cầu), Viêm mô tế bào.</p>
+                        </div>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-yellow-800">Tổn thương thận cấp (AKI)</h3>
+                            <p class="mt-2 text-sm">Thường do giảm tưới máu thận hoặc do thuốc (NSAID). Thường hồi phục.</p>
+                        </div>
+                         <div class="bg-white/50 p-4 rounded-lg">
+                             <h3 class="font-bold text-yellow-800">Tác dụng phụ của thuốc</h3>
+                            <p class="mt-2 text-sm">Hội chứng Cushing, chậm lớn, loãng xương (corticoid); độc thận (CNIs); độc tính sinh dục (Cyclophosphamide)...</p>
+                        </div>
+                         <div class="bg-white/50 p-4 rounded-lg">
+                             <h3 class="font-bold text-yellow-800">Rối loạn chuyển hóa</h3>
+                            <p class="mt-2 text-sm">Tăng lipid máu, thiếu Vitamin D, suy giáp, thiếu máu thiếu sắt.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             
+             <!-- Section 6: Điều trị (đầy đủ) -->
+            <section id="section-6" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                 <div class="p-6 bg-gradient-to-r from-red-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-red-900">6. Điều trị (Chi tiết)</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom w-1/3 p-4"><strong>I. Điều trị đặc hiệu (Ức chế miễn dịch)</strong></td><td class="table-cell-custom w-2/3 p-4">
+                                <div class="sub-table">
+                                    <table class="w-full text-sm">
+                                        <thead><tr><th class="p-2" colspan="2">Liệu pháp Corticoid (Prednisone/Prednisolone)</th></tr></thead>
+                                        <tbody>
+                                            <tr class="border-b"><td class="w-1/3 p-2"><strong>Đợt đầu tiên</strong></td><td class="p-2">
+                                                <ul>
+                                                    <li><u>Tấn công:</u> <strong>2 mg/kg/ngày</strong> (tối đa 60 mg) x 4-6 tuần.</li>
+                                                    <li><u>Củng cố:</u> <strong>1.5 mg/kg cách nhật</strong> (tối đa 40 mg) x 4-6 tuần, sau đó giảm liều dần.</li>
+                                                    <li><u>CẬP NHẬT KDIGO:</u> Cân nhắc phác đồ ngắn hơn (8-12 tuần) ở một số trẻ.</li>
+                                                </ul>
+                                            </td></tr>
+                                            <tr class="border-b"><td class="w-1/3 p-2"><strong>Điều trị Tái phát</strong></td><td class="p-2">
+                                                 <ul>
+                                                    <li><u>Tấn công:</u> <strong>2 mg/kg/ngày</strong> cho đến khi thuyên giảm (protein niệu âm tính 3 ngày).</li>
+                                                    <li><u>Củng cố & Giảm liều:</u> Chuyển sang <strong>1.5 mg/kg cách nhật</strong>, giảm dần trong ≥ 3 tháng.</li>
+                                                 </ul>
+                                            </td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sub-table">
+                                    <table class="w-full text-sm">
+                                        <thead><tr><th class="p-2" colspan="2">Các thuốc Ức chế Miễn dịch khác (Thuốc tiết kiệm Corticoid)</th></tr></thead>
+                                        <tbody>
+                                            <tr class="border-b"><td class="w-1/3 p-2"><strong>Thuốc ức chế Calcineurin</strong> (Tacrolimus...)</td><td class="p-2">Lựa chọn hàng đầu cho <strong>SRNS (kháng thuốc)</strong>. Cần theo dõi nồng độ thuốc và chức năng thận.</td></tr>
+                                            <tr class="border-b"><td class="w-1/3 p-2"><strong>Mycophenolate Mofetil (MMF)</strong></td><td class="p-2">Hiệu quả cho FRNS/SDNS. Theo dõi tác dụng phụ tiêu hóa, huyết học.</td></tr>
+                                             <tr class="border-b"><td class="w-1/3 p-2"><strong>Cyclophosphamide</strong></td><td class="p-2">Dùng cho FRNS/SDNS phức tạp. Giới hạn liều tích lũy để tránh độc tính sinh dục.</td></tr>
+                                            <tr><td class="w-1/3 p-2"><strong>Rituximab</strong></td><td class="p-2">Kháng thể kháng CD20, dùng cho các thể bệnh kháng trị, phức tạp.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td></tr>
+                            <tr><td class="table-cell-custom w-1/3 p-4"><strong>II. Điều trị Hỗ trợ & Biến chứng</strong></td><td class="table-cell-custom w-2/3 p-4">
+                                <ul>
+                                    <li><strong>Phù & Giảm thể tích:</strong> Hạn chế muối. Dùng lợi tiểu (Furosemide). <strong>Truyền Albumin (0.5-1 g/kg) + Furosemide</strong> khi có sốc/phù nặng.</li>
+                                    <li><strong>Huyết khối:</strong> Dùng thuốc chống đông (LMWH) khi có chỉ định.</li>
+                                    <li><strong>Bảo vệ thận:</strong> Ưu tiên dùng <strong>ACEi/ARB</strong> khi có tăng huyết áp hoặc protein niệu dai dẳng (lưu ý "sick day rules").</li>
+                                </ul>
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+             
+            <!-- Sections 7 & 8 -->
+            <section id="section-7" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <div class="p-6 bg-gradient-to-r from-teal-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-teal-900">7. Chăm sóc & Dự phòng</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom p-4 w-1/3"><strong>Chế độ ăn & Sinh hoạt</strong></td><td class="table-cell-custom p-4 w-2/3"><ul><li>Ăn nhạt khi phù, bổ sung Canxi/Vitamin D khi dùng corticoid.</li><li>Khuyến khích vận động khi bệnh ổn định.</li><li>Theo dõi cân nặng và protein niệu bằng que thử tại nhà.</li></ul></td></tr>
+                            <tr><td class="table-cell-custom p-4"><strong>Tiêm chủng & Phơi nhiễm</strong></td><td class="table-cell-custom p-4"><ul><li><strong>Chống chỉ định vaccine sống</strong> khi đang dùng corticoid liều cao.</li><li><strong>Khuyến cáo mạnh mẽ</strong> tiêm vaccine <strong>Cúm</strong> hàng năm và vaccine <strong>Phế cầu</strong>.</li><li>Xử trí dự phòng (VZIG/Acyclovir) khi phơi nhiễm Thủy đậu.</li></ul></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+             
+            <section id="section-8" class="content-card glassmorphism rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <div class="p-6 bg-gradient-to-r from-orange-100/50 to-transparent flex items-center">
+                    <div class="p-3 bg-white rounded-xl shadow mr-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-orange-900">8. Tiên lượng</h2>
+                </div>
+                <div class="watermark-container">
+                    <div class="watermark">TEAMDRCAT</div>
+                    <table class="w-full relative z-10">
+                        <tbody>
+                            <tr class="border-b border-white/20"><td class="table-cell-custom p-4 w-1/3"><strong>Thể nhạy cảm Corticoid (SSNS)</strong></td><td class="table-cell-custom p-4 w-2/3"><ul><li>Tiên lượng thận lâu dài <strong>rất tốt</strong>.</li><li>Bệnh mạn tính, hay tái phát, ảnh hưởng chất lượng cuộc sống do bệnh và tác dụng phụ của thuốc.</li></ul></td></tr>
+                            <tr><td class="table-cell-custom p-4"><strong>Thể kháng Corticoid (SRNS)</strong></td><td class="table-cell-custom p-4"><ul><li>Tiên lượng <strong>xấu hơn</strong>. Nguy cơ cao tiến triển đến <strong>bệnh thận mạn giai đoạn cuối</strong>, đặc biệt ở thể FSGS không thuyên giảm (>60%).</li></ul></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Scroll-triggered animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-card').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Offset for sticky nav
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
